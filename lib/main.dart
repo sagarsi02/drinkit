@@ -1,6 +1,5 @@
+import 'package:drinkit/Screen/Splash.dart';
 import 'package:flutter/material.dart';
-
-import 'Screen/Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: MyHome(),
+      home: Splash(),
       debugShowCheckedModeBanner: false,
     );
   }
