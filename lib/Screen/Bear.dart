@@ -1,6 +1,5 @@
 // ignore: file_names
 import 'package:drinkit/Screen/ProductSearch.dart';
-import 'package:drinkit/Screen/test.dart';
 import 'package:customizable_counter/customizable_counter.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +26,11 @@ class _BearState extends State<Bear> {
               },
               child: Column(
                 children: <Widget>[
-                  Image.network(
-                    'https://source.unsplash.com/random/500x250/?beer',
+                  Image.asset(
+                    'assets/images/wine2.jpg',
+                    height: 200,
+                    width: 400,
+                    fit: BoxFit.fill,
                   ),
                   Column(
                     children: const <Widget>[

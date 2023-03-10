@@ -22,12 +22,120 @@ class _WhiskeyState extends State<Whiskey> {
           for (int i = 1; i <= 3; i++)
             GestureDetector(
               onTap: () {
-                print('Clicked');
+                // BottomSheet Modal ==================================================================
+                showModalBottomSheet<void>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return SizedBox(
+                      // height: 600,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/images/wine1.jpg',
+                              height: 200,
+                              width: 400,
+                              fit: BoxFit.fill,
+                            ),
+                            const SizedBox(height: 5),
+                            Column(
+                              children: <Widget>[
+                                const Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Red Wine',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 3),
+                                const Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Select red wine glass set is suitable for everyday use and special occasions. Select is an elegant and functional collection of high-quality glasses. An eye-catching contemporary shape these red wine glasses make the perfect choice for home or as a set to gift.',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color(0xFF897C7B),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: const [
+                                    Text(
+                                      'Quantity',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                        color: Color(0xFF000000),
+                                      ),
+                                    ),
+                                    Text(
+                                      '1050 ml',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                        color: Color(0xFF897C7B),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 5),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  'Price : 1299',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    color: Color(0xFF897C7B),
+                                  ),
+                                ),
+                                CustomizableCounter(
+                                  borderColor: Color(0xFFFF6A00),
+                                  backgroundColor: Color(0xFFFF6A00),
+                                  buttonText: "Add to Cart",
+                                  // count: 0,
+                                  step: 1,
+                                  minCount: 0,
+                                  maxCount: 5,
+                                  incrementIcon: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                  decrementIcon: Icon(
+                                    Icons.remove,
+                                    color: Colors.white,
+                                  ),
+                                  // onCountChange: (count) {
+                                  //   print(count);
+                                  // },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
               },
               child: Column(
                 children: <Widget>[
-                  Image.network(
-                    'https://source.unsplash.com/random/500x250/?wine',
+                  Image.asset(
+                    'assets/images/wine1.jpg',
+                    height: 200,
+                    width: 400,
+                    fit: BoxFit.fill,
                   ),
                   Column(
                     children: const <Widget>[
@@ -85,7 +193,7 @@ class _WhiskeyState extends State<Whiskey> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 7),
+                  const SizedBox(height: 9),
                 ],
               ),
             ),
