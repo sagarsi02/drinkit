@@ -1,7 +1,11 @@
 // ignore_for_file: file_names
-import 'package:drinkit/Screen/Bear.dart';
-import 'package:drinkit/Screen/Whiskey.dart';
+import 'package:drinkit/Screen/ProductScreen/Bear.dart';
+import 'package:drinkit/Screen/ProductScreen/Scotch.dart';
+import 'package:drinkit/Screen/ProductScreen/Whiskey.dart';
 import 'package:flutter/material.dart';
+
+import 'Auth/Login.dart';
+import 'Cart.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -37,9 +41,6 @@ class _MyHomeState extends State<MyHome> {
                     Tab(child: Text('Whiskey')),
                     Tab(child: Text('Bear')),
                     Tab(child: Text('Scotch')),
-                    Tab(child: Text('Rum')),
-                    Tab(child: Text('Moctail')),
-                    Tab(child: Text('Premium')),
                   ],
                 ),
               ),
@@ -49,17 +50,19 @@ class _MyHomeState extends State<MyHome> {
             children: <Widget>[
               Whiskey(),
               Bear(),
-              Icon(Icons.directions_car, size: 350),
-              Icon(Icons.directions_bike, size: 350),
-              Icon(Icons.directions_boat, size: 350),
-              Icon(Icons.movie_creation, size: 350),
+              Scotch(),
             ],
           ),
         ),
         // **************************************************Bottom Navigattion*******************************
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            null;
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const LoginPage(),
+              ),
+            );
           },
           child: const Icon(Icons.account_circle_rounded),
         ),
@@ -79,14 +82,23 @@ class _MyHomeState extends State<MyHome> {
                   Icons.home,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
               IconButton(
                 icon: const Icon(
                   Icons.trolley,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const MyCart(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

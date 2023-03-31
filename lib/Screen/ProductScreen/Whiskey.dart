@@ -116,9 +116,6 @@ class _WhiskeyState extends State<Whiskey> {
                                     Icons.remove,
                                     color: Colors.white,
                                   ),
-                                  // onCountChange: (count) {
-                                  //   print(count);
-                                  // },
                                 ),
                               ],
                             ),
